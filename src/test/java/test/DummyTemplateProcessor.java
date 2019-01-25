@@ -1,5 +1,8 @@
 package test;
 
+import java.io.IOException;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.Map;
 
 import uk.ac.uos.i2p.assignment.TemplateProcessor;
@@ -15,8 +18,8 @@ public class DummyTemplateProcessor implements TemplateProcessor {
 	}
 
 	@Override
-	public String expandTemplate(String templateName, Map<String, Object> context) {
-		return "hello";
+	public void expandTemplate(Reader input, Writer output, Map<String, Object> context) throws IOException {
+		output.write("hello");
 	}
 
 }
